@@ -5,7 +5,7 @@ from tkinter import font as tkfont
 from PIL import Image, ImageTk
 
 from emotion_detector import detect_emotion
-from music_player import play_for_emotion, stop, get_current_emotion
+from music_player import play_for_emotion, stop, get_current_emotion, pause
 
 EMOTION_COLORS = {
     'happy':    '#F5A623',
@@ -66,6 +66,14 @@ class App:
             text="Stop Music",
             command=stop,
             bg='#c0392b', fg='white',
+            relief='flat', padx=12, pady=4
+        ).pack(pady=10)
+
+        tk.Button(
+            self.root,
+            text="Pause/Resume Music",
+            command=pause,
+            bg='#4CAF50', fg='white',
             relief='flat', padx=12, pady=4
         ).pack(pady=10)
 
